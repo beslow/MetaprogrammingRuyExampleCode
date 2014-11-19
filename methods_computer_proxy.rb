@@ -13,3 +13,10 @@ class Computer
     result
   end
 end
+
+class Computer
+  def respond_to?(method)
+    @data_source.respond_to?("get_#{method}_info") || super
+  end
+  
+  #...
